@@ -1,0 +1,30 @@
+// ***************************************************
+// Base Styles, variables & mixins
+// ***************************************************
+// Mixins
+@mixin flush() {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+// Variables
+
+// Base
+* {
+	box-sizing: border-box;
+}
+
+html {
+	@include flush;
+}
+
+body {
+	@include flush;
+}
+
+#main {
+	@include flush;
+	position: relative;
+	border: 1em solid #282529;
+}
