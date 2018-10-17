@@ -14,14 +14,16 @@
 		<!-- Header -->
 		<header>
 			<div class="header-inner">
+
 				<div class="search-box">
 					<!-- Search Box -->
-						<input type="text" id="search-input" placeholder="Filter locations by name.." title="Type in a location" data-bind="textInput: userInput">
+						<input type="text" id="search-input" placeholder="Filter locations by name..">
 					<!-- Locations List -->
-					<ul id="locations-list" data-bind="foreach: filterLocations">
-						<li data-bind="text: name"></li>
+					<ul id="locations-list">
+						<li></li>
 					</ul>
 				</div>
+
 				<div class="menu-buttons">
 					<div>
 						<div class="menu-icon-wrapper">
@@ -32,6 +34,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</header>
 		<!-- Google map -->
