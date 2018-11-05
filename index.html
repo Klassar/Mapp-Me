@@ -9,30 +9,33 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+
+	<div class="errorMessage">
+		<p>Ohhh no an error! Try reloading application.. <span id="details">Or click for details</span></p>
+		<span id="closeError">X</span>
+	</div>
+
 	<!-- Main Content (header, sidebar, map) -->
 	<main id="main">
 		<!-- Header -->
 		<header>
 			<div class="header-inner">
 
-				<div class="search-box">
-					<!-- Search Box -->
-						<input type="text" id="search-input" placeholder="Filter locations by name..">
-					<!-- Locations List -->
-					<ul id="locations-list">
-						<li></li>
-					</ul>
-				</div>
-
-				<div class="menu-buttons">
+				<div class="menu-buttons" data-bind="click: showList">
 					<div>
 						<div class="menu-icon-wrapper">
-							<img src="https://www.clker.com/cliparts/n/U/H/1/H/u/search-icon-white-one-hi.png" alt="">
-						</div>
-						<div class="menu-icon-wrapper">
-							<img src="http://images.clipartpanda.com/location-icon-white-define-location-256.png" alt="">
+							<img src="/img/dropdown.png" alt="dropdown icon">
 						</div>
 					</div>
+				</div>
+
+				<div class="search-box">
+					<!-- Search Box -->
+						<input type="text" id="search-input" placeholder="Start Search.." data-bind="textInput: userInput">
+					<!-- Locations List -->
+					<ul id="locations-list" data-bind="foreach: filteredLocations, visible: userInput().length > 0">
+						<li data-bind="text: title, click: populateInfoWindow($data, largeInfowindow)"></li>
+					</ul>
 				</div>
 
 			</div>
@@ -40,6 +43,7 @@
 		<!-- Google map -->
 		<div id="map"></div>
 	</main>
+	<noscript>It appears you have JavaScript disabled. Please enable Javascript to use this application.</noscript>
 <!-- Load scripts -->
 <!-- <script src='js/knockout-3.4.2.js'></script> -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

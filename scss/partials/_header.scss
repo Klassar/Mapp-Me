@@ -11,7 +11,7 @@ header {
 		background-color: #363636;
 		border-bottom: 5px solid #282529;
 		.search-box {
-			width: calc(100% - 105px);
+			width: calc(100% - 50px);
 			position: relative;
 			align-items: inherit;
 			display: flex;
@@ -37,18 +37,20 @@ header {
 				border-bottom-right-radius: 2px;
 				border-bottom-left-radius: 2px;
 				li {
-					padding: 10px;
+					padding: 10px 10px 10px 15px;
 					color: #000;
 					font-weight: normal;
+					box-shadow: inset 0 0 0 0 #000;
+					transition: box-shadow 0.4s ease-in;
 					&::before {
 						content: " ";
-						background-image: url("http://icons.iconarchive.com/icons/martz90/hex/512/location-icon.png");
+						background-image: url("/img/pin_dark.png");
 						background-size: contain;
 						background-repeat: no-repeat;
 						width: 50px;
 						position: relative;
-						left: -5px;
-						padding: 13px;
+						left: -8px;
+						padding: 9px;
 						top: 8px;
 					}
 					&:hover {
@@ -69,9 +71,8 @@ header {
 			background: #242224;
 			position: relative;
 			top: -1px;
-			width: 105px;
-			border-left: 1em solid #363636;
-			padding: 0 5px;
+			width: 40px;
+			padding: 5px 15px;
 			border-radius: 2px;
 			div {
 				width: 100%;
@@ -84,11 +85,14 @@ header {
 					text-align: center;
 					margin-top: 3px;
 					img {
-						width: 20px;
+						width: 15px;
 						height: 20px;
 						margin: 0 auto;
 					}
 				}
+			}
+			&:hover {
+				cursor: pointer;
 			}
 		}
 	}

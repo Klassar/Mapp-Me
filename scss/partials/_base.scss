@@ -28,3 +28,47 @@ body {
 	position: relative;
 	border: 1em solid #282529;
 }
+
+.errorMessage {
+	width: 100%;
+	padding: 1em;
+	height: auto;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+	color: #8a6d3b;
+	font-weight: bold;
+	display: none;
+	position: relative;
+	text-align: center;
+	p {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	span {
+		color: #8a6d3b;
+		font-weight: normal;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	#closeError {
+		color: #fcf8e3;
+		background: #8a6d3b;
+		margin-top: 1em;
+		padding: 7px 10px;
+		border-radius: 2px;
+		line-height: 16px;
+		display: inline-block;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	#closeError {
+		position: absolute;
+		top: 11px;
+		right: 1em;
+		display: block !important;
+		margin-top: 0 !important;
+	}
+}
